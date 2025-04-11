@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genius Avançado</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log("Service Worker registrado com sucesso!"))
+          .catch(err => console.error("Erro ao registrar Service Worker:", err));
+      }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Genius</h1>
+        <div class="scoreboard">
+            <span id="pontuacao">Pontuação: 0</span>
+            <span id="recorde">Recorde: 0</span>
+        </div>
+        <div class="game-board">
+            <div class="button" id="vermelho" onclick="clicarCor('vermelho')"></div>
+            <div class="button" id="verde" onclick="clicarCor('verde')"></div>
+            <div class="button" id="amarelo" onclick="clicarCor('amarelo')"></div>
+            <div class="button" id="azul" onclick="clicarCor('azul')"></div>
+        </div>
+        <button id="iniciar" onclick="iniciarJogo()">Iniciar</button>
+        <p id="mensagem">Clique em 'Iniciar' para começar!</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
